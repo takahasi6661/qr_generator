@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if site.url %}
+ <img src="{{site.image.url}}">
+{% else %}
+<p>Ошибка, url не существует</p>
+  {% endif %}
+
+</body>
+</html>

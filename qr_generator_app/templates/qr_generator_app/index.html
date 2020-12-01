@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table of site</title>
+</head>
+<body>
+    <table border="1px">
+        {% for site in sites %}
+        <tr>
+            <td>{{site.id}}</td>
+            <td><a href="{% url 'image_generator' id=site.id %}">{{site.name}}</a></td>
+            {% if site.description %}
+            <td>{{site.description}}</td>
+            {% else %}
+            <td>Отсутствует описание</td>
+            {% endif %}
+            {% if site.url %}
+            <td>{{site.url}}</td>
+            {% else %}
+            <td bgcolor="red">ОШИБКА</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
